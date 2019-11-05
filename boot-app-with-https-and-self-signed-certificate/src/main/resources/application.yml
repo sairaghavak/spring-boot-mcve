@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /sairaghava
+
+  port: 8443 # Not required to specify the port, default is 8443 for https
+  
+  # Below is the configuration to enable https
+  ssl:
+    enabled: true
+    key-store: classpath:https-self-signed-keystore.jks
+    key-store-password: changeit
+    key-alias: boot-https-config
+    key-password: changeit
+    key-store-type: jks
+    
+
+spring:
+  main:
+    banner-mode: off # Disable the banner    

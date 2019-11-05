@@ -1,0 +1,5 @@
+# The below command will create a key with a keystore, to retrieve a certificate you gotta export from it, for this demo below command is enough
+keytool -genkey -alias boot-https-config -keyalg RSA -keysize 2048 -storetype jks -keystore https-self-signed-keystore.jks -validity 365
+keystore password: changeit
+# ngrok commmand for public url with http tunnel
+ngrok http https://localhost:8443
