@@ -1,0 +1,6 @@
+server:
+  servlet:
+    context-path: /sairaghava
+spring:
+  main:
+    banner-mode: off # Disable the banner
