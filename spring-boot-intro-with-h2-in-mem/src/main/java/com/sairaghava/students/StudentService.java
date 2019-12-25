@@ -18,7 +18,7 @@ public class StudentService {
   
     Already, JPA along with Hibernate in spring-boot does the job of db, connection-pooling and operation commits etc.
   
-    This @Transactional is JTA specific and for distributed transactions
+    Refer to SimpleJpaRepository in Spring API which uses @Transactional
   */
   public List<Student> getAll() {
     return studentRepository.findAll();
