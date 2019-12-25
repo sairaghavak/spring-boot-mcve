@@ -27,20 +27,19 @@ public class StudentController {
   @Autowired
   private Message message;
 
-  @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+  @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
   public List<Student> getAllStudents() {
     return studentService.getAll();
   }
 
-  @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE},
-      produces = {MediaType.APPLICATION_XML_VALUE})
+  @PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_XML_VALUE })
   @ResponseStatus(HttpStatus.CREATED)
   public Student createStudent(@RequestBody Student student) {
     return studentService.create(student);
     /*- The save operation will never be null */
   }
 
-  @GetMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
+  @GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
   public ResponseEntity<?> getStudent(@PathVariable int id) {
     Optional<Student> student = studentService.get(id);
     message.setMessage("id " + id + " Not found");
@@ -48,14 +47,13 @@ public class StudentController {
         : ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
   }
 
-  @PutMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
+  @PutMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
   public Student updateStudent(@RequestBody Student student, @PathVariable int id) {
     return studentService.update(id, student);
     /*- The save operation will never be null */
   }
 
-  @DeleteMapping(value = "/{id}",
-      produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+  @DeleteMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
   public ResponseEntity<?> deleteStudent(@PathVariable int id) {
     studentService.delete(id);
     message.setMessage("Deleted resouce with id " + id);

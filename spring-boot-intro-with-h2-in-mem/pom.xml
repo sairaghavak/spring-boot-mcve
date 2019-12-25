@@ -47,6 +47,16 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- junit-jupiter-engine is An implementation of junit-platform-engine -->
+    <!-- Frameworks like SPOC, CUCUMBER implement junit-platform-engine-->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+      <!-- This will also include, junit-api jar, junit-platform jar-->
+    </dependency>
+
   </dependencies>
 
   <build>
