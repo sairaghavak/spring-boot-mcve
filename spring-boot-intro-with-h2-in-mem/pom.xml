@@ -37,6 +37,7 @@
     </dependency>
 
     <!-- To convert POJO to XML and XML to POJO, just like JAX-B, you can also use JAX-B instead of this-->
+    <!-- Spring-boot uses jackson-databind implicitly that converts POJO to json and viceversa -->
     <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
