@@ -5,11 +5,13 @@ server:
 spring:
   main:
     banner-mode: 'off' # It should be in quotes yaml
-# H2-DB props    
+  datasource:
+    url: jdbc:h2:mem:testdb # This propperty is implict and default for h2, but adding here for reference to know the db-name and h2-db mode of connection
+# H2-DB props
   h2:
     console:
       enabled: true
-      path: /h2db-console
+      path: /h2db-console    
   jpa:
     hibernate:
-      ddl-auto: none # this option will turn-off DDL generation
+      ddl-auto: none # this option will turn-off DDL generation            
