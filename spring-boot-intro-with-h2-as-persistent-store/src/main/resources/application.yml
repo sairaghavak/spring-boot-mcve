@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /srk
+  port: 9090 # Spring-boot's default port is 8080 for http and 8443 for https
+spring:
+  main:
+    banner-mode: 'off' # It should be in quotes yaml
+  datasource:
+    url: jdbc:h2:./src/main/resources/student-db-persistence;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    # DB_CLOSE_ON_EXIT=FALSE makes your db standaby and accessible as long as your VM/java process is not shutdown though active db-connections are empty
+    # AUTO-RECONNECT=TRUE, connects your db from the file system/persistent storage after restart of your db, that is when you relaunch your application
+    # This propperty is implict and default for h2, but adding here for reference
+# H2-DB props    
+  h2:
+    console:
+      enabled: true
+      path: /h2db-console
+  jpa:
+    hibernate:
+      ddl-auto: update # updates the schema if necessary
