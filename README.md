@@ -9,6 +9,6 @@ List of quick demos
 3. H2-Db with Spring-boot
    - in-memory - DONE
    - persistent storage - DONE
-4. profiles - TODO
-5. Actuator - TODO
-6. DI - TODO  
+4. DEpendency Injection - DONE - Last Updated - 16th Jan 2020   
+5. profiles - TODO
+6. Actuator - TODO
