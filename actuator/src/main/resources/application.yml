@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /srk
+  port: 9090
+
+   
+
+## Disable all the actutator endpoints by default and enable only the required ones
+management:
+  endpoints:
+    # enabled-by-default: false  
+    web:
+      exposure:
+        include: "*" # heapdump,liquibase,loggers,prometheus,threaddump,info,metrics,health    
+      ## actuator base path can be changed now using the below prop
+      base-path: /ac-path
+  endpoint:
+    health:
+      show-details: always
